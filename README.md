@@ -34,10 +34,13 @@ web site</a>:
 </ol>
 
 ## Loading the data
+Url <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+## fixing a link to a variable
+download.file(Url, destfile = "./epc.zip", method = "curl")
+## downloading needed file
 
-
-
-
+unzip(zipfile = "./epc.zip", exdir = "./data")
+## unpack loaded file
 
 When loading the dataset into R, please consider the following:
 
