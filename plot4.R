@@ -41,7 +41,7 @@ hpc_new <- hpc_new[ ,!(names(hpc_new) %in% c("Date","Time"))]
 hpc_new <- cbind("Date_Time" = DaT, hpc_new)
 ## obtaining new work dataframe with modified type of the first column and preparing to the following plots
 
-par(mfrow = c(2, 2), mar = c(4, 4, 2, 1))
+par(mfrow = c(2, 2), mar = c(4, 4, 3, 4))
 ## preparing our space for plotting
 
 with(hpc_new, {
