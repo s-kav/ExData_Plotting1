@@ -41,18 +41,6 @@ hpc_new <- hpc_new[ ,!(names(hpc_new) %in% c("Date","Time"))]
 hpc_new <- cbind("Date_Time" = DaT, hpc_new)
 ## obtaining new work dataframe with modified type of the first column and preparing to the following plots
 
-
-hist(hpc_new$Global_active_power, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", col = "red")
-dev.copy(png,"./figure/plot1.png", width = 480, height = 480)
-dev.off()
-## plotting a histogram in accordance with needed conditions (Plot 1); write as PNG-file with specified resolutions (480 x 480 pxs); close a connection with a device
-
-
-plot(hpc_new$Global_active_power ~ hpc_new$Date_Time, type = "l", ylab = "Global Active Power (kilowatts)", xlab = "")
-dev.copy(png,"./figure/plot2.png", width = 480, height = 480)
-dev.off()
-## plotting in accordance with needed conditions (Plot 2); write as PNG-file with specified resolutions (480 x 480 pxs); close a connection with a device
-
 par(mfrow = c(2, 2), mar = c(4, 4, 2, 1))
 ## preparing our space for plotting
 
@@ -70,4 +58,5 @@ with(hpc_new, {
              ylab = "Global_Rective_Power", xlab = "datetime")
 })
 dev.copy(png,"./figure/plot4.png", width = 480, height = 480)
+dev.off()
 ## plotting in accordance with needed conditions (Plot 4), 2 x 2 figures; write as PNG-file with specified resolutions (480 x 480 pxs); close a connection with a device
