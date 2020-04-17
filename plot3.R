@@ -41,6 +41,7 @@ hpc_new <- hpc_new[ ,!(names(hpc_new) %in% c("Date","Time"))]
 hpc_new <- cbind("Date_Time" = DaT, hpc_new)
 ## obtaining new work dataframe with modified type of the first column and preparing to the following plots
 
+par(mfrow = c(1, 1), mar = c(2, 4, 2, 1))
 with(hpc_new, {
         plot(Sub_metering_1 ~ Date_Time, type = "l",                              ylab = "Energy sub metering", xlab = "")
         lines(Sub_metering_2 ~ Date_Time, col = "Red")
